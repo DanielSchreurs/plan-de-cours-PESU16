@@ -33,9 +33,10 @@
 
 \section{Description du cours}
 
-Vous vous destinez à devenir des futurs techniciens du Web. Vous devez donc avoir un solide bagage qui vous permet de concevoir des contenus interactifs riches dans un navigateur en vous servant d’un des 3~langages fondamentaux du Web… JavaScript. Dans ce cours, nous explorons différentes techniques qui permettent d’introduire du contenu interactif riche. Tout particulièrement en étudiant les possibilités offertes par l’\href{https://developer.mozilla.org/fr/docs/Web/API/Canvas_API}{API de dessin canvas}\footnote{https://developer.mozilla.org/fr/docs/Web/API/Canvas\_API}.
+Un site internet, s’il n’était composé que d’images et de textes, il resterait très statique. On peut grâce à JavaScript les rendre dynamiques en faisant réagir le contenu à des évènements que l’utilisateur émet. Par exemple, le clic et le déplacement de sa souris, l’utilisation de son clavier, etc. Les sites internet les plus dynamiques sont les jeux qu’on peut directement jouer dans un navigateur puisqu'il n'y a là plus que des images qui s’animent et qui réagissent à des évènements.
+Dans ce cours, nous explorons différentes techniques qui permettent justement de rendre interactifs les sites internet jusqu’à devenir des jeux. Tout particulièrement en étudiant les possibilités offertes par l’\href{https://developer.mozilla.org/fr/docs/Web/API/Canvas_API}{API canvas}\footnote{https://developer.mozilla.org/fr/docs/Web/API/Canvas\_API} qui est l'interface  de programmation de dessin nativement disponible dans les navigateurs.
 
-Nous commencerons avec des animations 2D simples jusqu’à la réalisation de jeux 2D plus complets. En revanche, nous n’aborderons pas les concepts 3D.
+Nous commencerons avec des animations 2D simples jusqu’à la réalisation de jeux 2D plus complexes. En revanche, nous n’aborderons pas les concepts 3D.
 
 Ce cours s’inscrit dans la continuité du cours de «~Développement Côté Client (DCC)~», qui a pour but de poser les bases de la programmation côté client avec JavaScript. En troisième année, dans le cadre du cours de «~Développement d'Applications Mobiles (DAM)~», nous aurons régulièrement l’occasion de revenir sur certains concepts étudiés dans ce cours.
 \clearpage
@@ -137,10 +138,9 @@ Le cours se donne au deuxième quadrimestre, une fois par semaine à raison de 4
 \begin{figure}[H]
     \begin{center}
         \includegraphics[width=0.8\textwidth]{figures/EAEs.eps}
-        \caption{Représentation moléculaire des évènements dominants \cite{leclercq2008modele}}
+        \caption{Représentation atomique des évènements dominants \cite{leclercq2008modele}}
     \end{center}
 \end{figure}
-\clearpage
 \clearpage
 
 \section{Évaluation des apprentissages}
@@ -156,9 +156,9 @@ Le cours se donne au deuxième quadrimestre, une fois par semaine à raison de 4
 L’évaluation certificative s'organise en 2~temps~:
 \begin{enumerate}
     \item Vous devez rendre, le jour de l'examen, votre projet de jeu personnel que vous aurez développé individuellement chez vous pendant les différentes semaines de cours. Les consignes vous seront communiquées au premier cours. Vous devez donc gérer votre temps pour ce projet qui compte pour 20~\% de la cote finale.
-    \item L'examen pratique consiste à programmer un jeu à partir d'un énoncé\footnote{Je vous rappelle que les énoncés des années précédentes sont disponibles sur l'\href{https://github.com/tecg-mmi}{organisation GitHub} officielle du cours. (https://github.com/tecg-mmi)} qui vous sera fourni et que vous découvrirez le jour même. Vous aurez à votre disposition toutes les ressources du cours, un accès complet aux documentations officielles, ainsi que vos propres productions. Vous disposez de 4~heures pour réaliser cet examen en classe. Ce travail compte pour 80~\% de la cote finale. Vous serez dans une situation nouvelle, je ne reprends pas d'anciens examens puisqu'ils sont publics.
+    \item L'examen pratique consiste à programmer un jeu à partir d'un énoncé\footnote{Je vous rappelle que les énoncés des années précédentes sont disponibles sur l'\href{https://github.com/tecg-mmi}{organisation GitHub} officielle du cours. (https://github.com/tecg-mmi)} qui vous sera fourni et que vous découvrirez le jour même. Vous aurez à votre disposition toutes les ressources du cours, un accès complet aux documentations officielles, ainsi que vos propres productions. Vous disposez de 4~heures pour réaliser cet examen en classe. Ce travail compte pour 80~\% de la cote finale.
 \end{enumerate}
-Lors de la dernière séance de cours, je vous présenterai ma grille de corrections. Elle se construit toujours de la même manière. J'attribue aux fonctionnalités du jeu un degré de complexité. Ensuite, je mesure l'aboutissement des différentes fonctionnalités dans votre proposition. Ces fonctionnalités sont clairement mentionnées dans l'énoncé de l'examen et sont classées par ordre de complexité. Le nombre de points maximum attribué à chaque fonctionnalité est également mentionné.
+Lors de la première séance de cours, je vous présenterai l'énoncé du dernier examen avec sa grille d'évaluation. Elle se construit toujours de la même manière. J'attribue aux fonctionnalités du jeu un degré de complexité. Ensuite, je mesure l'aboutissement des différentes fonctionnalités dans votre proposition. Ces fonctionnalités sont clairement mentionnées dans l'énoncé de l'examen et sont classées par ordre de complexité. Le nombre de points maximum attribué à chaque fonctionnalité est également mentionné.
 
 
 \subsection{Justifications}
@@ -166,22 +166,23 @@ Lors de la dernière séance de cours, je vous présenterai ma grille de correct
 \begin{itemize}
     \item «~L’émission de feedbacks est souvent considérée comme un élément clé pour renforcer la motivation et soutenir la réussite des élèves.~»\cite{georges2011feedbacks}. La réalisation de l'examen formatif est une activité intégrée qui permet de recevoir du feedback. D'une part, sur sa compréhension de la matière, donc plutôt un feedback simple de type assertif et évaluatif\cite{georges2011feedbacks} sur sa performance. D'autre part un feedback plus complexe relatif aux stratégies qu'il faut adaptées (Métacognition). Par exemple, quelles sont les parties plutôt simples et comment rapidement les valider. Ou encore, réfléchir aux éléments plus compliqués, que mes apprenants aiment appeler des «~pièges~»\footnote{Je n'adhère évidemment pas à cette appellation. Mon examen ne contient pas de «~pièges~» sans quoi on pourrait se poser des questions sur mes intentions. L'examen contient des parties plus compliquées qui nécessitent une certaine forme d'inhibition cognitive.}. \citet{hattie2008visible} explique dans son ouvrage que le feedback a un impact significatif sur la performance de l'apprenant. Enfin, c'est une occasion pour entrainer la méta-cognission\cite{leclercq2008modele}. Nous réfléchissons ensemble aux stratégies qu'il faut mettre en place pour réussir l'examen. D'ailleurs chaque année je désigne un «~sécrétaire~» pour cette séance. Il aura pour mission de prendre note de toutes les astuces que nous avons déterminées ensemble afin que les apprenants puissent consulter cette ressource plus tard. D'autre part, je prends soin, dans la rédaction de l'énoncé, d'être constant. À vrai dire, je réutilise un template de base pour rédiger l'énoncé d’examen afin qu’ils ne soient pas surpris par la forme le jour de l'examen.
     \item La réalisation de l'exercice formatif est l'occasion pour moi de me rendre compte des éventuelles lacunes de certains apprenants. Cela me donne une vision assez précise de leur niveau. Je peux donc donner un feedback personnalisé et leur fournir des ressources spécifiques au besoin.
+    \item Je choisis de présenter lors de la \textit{first-class meeting}, après la fiche ECTS, la grille d'évaluation avec l'énoncé d'examen afin de permettre à tout le monde d'éventuellement adapter des stratégies de réussite et aussi pour rendre très concrète la compétence visée. Ainsi ils savent, dès le début, où se trouvent les fiches et les examens.
 \end{itemize}
 
-\section{Triple concordance ou alignement pédagogique}
+\section{Alignement pédagogique}
 \begin{table}[H]
     \begin{tabular}{|l|l|}
         \hline
-        Visées d’apprentissage        & \begin{tabular}[c]{@{}l@{}}Savoir programmer des interfaces multimédias \\ riches dans un navigateur.\end{tabular}                                                                                                                                                                           \\ \hline
+        Visées d’apprentissage        & \begin{tabular}[c]{@{}l@{}}Savoir programmer dans un navigateur avec l'API de canvas un jeu.\end{tabular}                                                                                                                                                                                    \\ \hline
         Activités d’apprentissage     & \begin{tabular}[c]{@{}l@{}}- Exercice pratique par matière\\ - Entrainement à l’examen\\ - Exploitation collective ou individuelle de nouvelles \\  techniques pour proposer des solutions.\\ - Apprentissage par projets avec le projet personnel.\\ - Transmission théorique.\end{tabular} \\ \hline
-        Évaluation des apprentissages & \begin{tabular}[c]{@{}l@{}}Réalisation en classe d'un jeu à 2~dimensions\\ dans un navigateur avec l'API de canvas.\end{tabular}                                                                                                                                                             \\ \hline
+        Évaluation des apprentissages & \begin{tabular}[c]{@{}l@{}}-Réalisation, en classe et individuellement, d'un jeu imposé\\à 2~dimensions dans un navigateur avec l'API de canvas.\\-Réalisation, à domicile et individuellement, d'un jeu personnel\\à 2~dimensions dans un navigateur avec l'API de canvas.\end{tabular}     \\ \hline
     \end{tabular}
 \end{table}
 \subsection{Justifications}
 \begin{itemize}
-    \item La compétence que je souhaite entrainer, c'est la réalisation d'interfaces multimédias riches.
-    \item Je les y entraine au travers de différentes activités d'apprentissages variées afin de répondre à la différence mathétique des apprenants. Dans tous les cas, toutes ces méthodes visent un même objectif. Construire ensemble les briques nécessaires à la réalisation d'un jeu à 2~dimensions.
-    \item Enfin, j'évalue, à la fin, la capacité de l'apprenant à réaliser, en pleine autonomie, un jeu à 2~dimensions dans un navigateur avec l'API de dessin canvas.
+    \item La compétence que je souhaite entrainer, c'est la programmation d'interfaces multimédias riches dans un navigateur, en me limitant aux jeux 2D.
+    \item Je les y entraine au travers de différentes activités d'apprentissages variées afin de répondre à la différence mathétique des apprenants. Dans tous les cas, toutes ces activités visent un même objectif. Construire ensemble les briques nécessaires à la réalisation d'un jeu en pleine autonomie.
+    \item Enfin, j'évalue, à la fin, la capacité de l'apprenant à réaliser, en pleine autonomie, un jeu à 2~dimensions dans un navigateur avec l'API de canvas.
 \end{itemize}
 
 
